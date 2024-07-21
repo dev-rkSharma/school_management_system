@@ -1,0 +1,9 @@
+@import "../universal/color";
+@import "../universal/font";
+
+* {
+  margin: 0;
+  padding: 0;
+  @include font($poppins, 500, 2);
+}
+

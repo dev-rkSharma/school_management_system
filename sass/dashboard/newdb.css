@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bodyContent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.bodyContent .sideContent {
+  background-color: #0F17AE;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 18%;
+  transition: width 0.3s;
+}
+.bodyContent .sideContent .user {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 0px 0px 5px 5px;
+  flex-direction: column;
+  align-items: center;
+  border: 1ps solid white;
+}
+.bodyContent .sideContent h1 {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.8vw !important;
+  text-transform: capitalize !important;
+}/*# sourceMappingURL=newdb.css.map */

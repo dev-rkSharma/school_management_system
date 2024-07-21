@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.data-table {
+  border: 0.2px solid lightgray;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 5px;
+}
+.data-table tr {
+  border: 0.2px solid lightgray;
+}
+.data-table tr th {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #0F17AE;
+  color: #ffffff;
+  border: 1px solid lightgray;
+  padding: 1%;
+  letter-spacing: 1px;
+}
+.data-table tr td {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 1px solid lightgray;
+  padding: 1%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.table {
+  width: 90%;
+  margin: auto;
+  box-shadow: 1px 1px 10px lightgray;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+.head {
+  width: 100%;
+  height: 40%;
+  background-color: lightgray;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+.head p {
+  font-size: 2.5vw;
+  height: auto;
+  padding: 1% 0%;
+  color: rgb(110, 110, 110);
+  font-weight: 100;
+}
+
+.table-container {
+  width: auto;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  height: auto;
+}
+
+.filter-section,
+div.search {
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+.filter-section button#modal-btn,
+div.search button#modal-btn {
+  width: 6vw;
+  margin: 1%;
+  padding: 1%;
+  border: 0.1px solid lightgray;
+  border-radius: 3px;
+  background-color: lightgray;
+  color: black;
+  letter-spacing: 1px;
+  font-size: 1vw;
+  font-weight: 400;
+  float: right;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter-section button#modal-btn:hover,
+div.search button#modal-btn:hover {
+  background-color: #0F17AE;
+  color: #ffffff;
+  border: none;
+}
+.filter-section button#modal-btn:active,
+div.search button#modal-btn:active {
+  box-shadow: 1px 1px 10px rgb(204, 197, 197);
+}
+.filter-section input#search,
+div.search input#search {
+  width: 20vw;
+  height: 5vh;
+  padding: 0vw 1vw;
+  border: none;
+  border-bottom: 2px solid grey;
+  font-size: large;
+  outline: none;
+}
+.filter-section:focus,
+div.search:focus {
+  border: none;
+}
+
+.action-icons-buttons {
+  width: 3vw;
+  height: 4vh;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+.action-icons-buttons:hover {
+  background-color: green;
+  color: #ffffff !important;
+}
+
+.c-red {
+  color: red !important;
+}
+
+.c-green {
+  color: green !important;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}/*# sourceMappingURL=usermaster.css.map */

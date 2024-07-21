@@ -1,0 +1,78 @@
+/* Loader animation */
+
+#preloader {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  // opacity: 0.5;
+
+  .loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 5px solid #4caf50; /* Initial color */
+    border-top: 5px solid transparent; /* Transparent top border for triangle effect */
+    border-radius: 50%;
+    animation: colorChange 1s linear infinite;
+    animation-fill-mode: forwards;
+  }
+  .loader::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 5px solid #4caf50; /* Initial color */
+    border-top: 5px solid transparent; /* Transparent top border for triangle effect */
+    border-radius: 50%;
+    animation: colorChange 1s linear infinite;
+    animation-fill-mode: forwards;
+  }
+  .loader:after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 5px solid #4caf50; /* Initial color */
+    border-top: 5px solid transparent; /* Transparent top border for triangle effect */
+    border-radius: 50%;
+    animation: colorChange 1s linear infinite;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes colorChange {
+    0% {
+      border-color: #fc0000; /* Start and end color (Green) */
+    }
+    20% {
+      border-color: #75f321; /* Middle color (Blue) */
+    }
+    40% {
+      border-color: #5716ee; /* Middle color (Blue) */
+    }
+    60% {
+      border-color: #ca1e88; /* Start and end color (Green) */
+    }
+    80% {
+      border-color: #fcd600; /* Start and end color (Green) */
+    }
+    100% {
+      border-color: #f39821; /* Middle color (Blue) */
+    }
+  }
+}

@@ -1,0 +1,235 @@
+@import "../../sass/universal/_color.scss";
+@import "../../sass/universal/font";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  // @include poppins($poppins, 400, 1vw);
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bodyContent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  .sideContent {
+    background-color: $primary-blue;
+    color: $pure-white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 18%;
+    transition: width 0.3s; // Add transition for smooth collapse/expand
+    z-index: 1;
+    .user {
+      height: 25vh;
+      display: flex;
+      justify-content: center;
+      border-radius: 0px 0px 5px 5px;
+      flex-direction: column;
+      align-items: center;
+      border: 1ps solid white;
+      h1 {
+        color: $pure-white;
+        @include poppins($poppins, 400, 1.8vw);
+      }
+    }
+    ul {
+      @include flex-col;
+      padding: 1vh 2.5vw;
+      margin-top: 5vh;
+
+      li,
+      .dropdown-btn {
+        list-style: none;
+        font-size: 1.8vw;
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          color: $pure-white;
+          letter-spacing: 2px;
+          @include poppins($poppins, 400, 1.4vw);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+
+        a:hover {
+          // color: grey;
+          background: rgba(1, 1, 1, 0.28);
+
+          text-decoration: underline;
+        }
+        a:active {
+          color: $pure-white;
+          text-decoration: dashed;
+        }
+      }
+      li:hover {
+        background: rgba(1, 1, 1, 0.28);
+      }
+    }
+  }
+  //! main body content section  >>
+  .mainContent {
+    background-color: #fdfffc;
+    width: 82%;
+    display: grid;
+    z-index: 1;
+    gap: 5vh;
+    align-content: start;
+    position: absolute;
+    top: 0;
+    left: 18%;
+    transition: left 0.3s, width 0.3s; // Add transition for smooth collapse/expand
+  }
+
+  //!main body contenet section ends...................................
+}
+
+//! icons
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 7;
+}
+
+//! icons ends ................................................................
+
+//! collapsed section >>
+.collapsed .sideContent {
+  width: 5%;
+}
+
+.collapsed .mainContent {
+  width: calc(100% - 5%);
+  // width: 95%;
+  left: 5%;
+}
+
+.collapsed #person_logo {
+  font-size: 3vw !important;
+  color: $pure-white;
+  cursor: pointer;
+}
+
+.collapsed #person_logo:hover {
+  color: $pure-white;
+}
+
+.collapsed #username {
+  display: none;
+}
+
+.collapsed li {
+  display: flex;
+  justify-content: center;
+}
+
+.collapsed li {
+  display: none;
+}
+
+.collapsed a {
+  display: none;
+}
+
+.collapsed .linnk {
+  display: none;
+}
+.collapsed .side-bar-icon {
+  display: none;
+  // color: grey;
+  // float: left;
+}
+
+.collapsed .side-bar-icon:hover {
+  color: $pure-white;
+  cursor: pointer;
+}
+
+.collapsed #dd .button-container {
+  display: none;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+//!collapsed seciton ends..............................
+
+//!button section >>
+button.dropdown-btn {
+  background-color: $primary-blue;
+  border: none !important;
+  color: $pure-white;
+  @include poppins($poppins, 400, 1.5vw);
+
+  .drop-down-logo {
+    font-size: 2vw !important;
+  }
+
+  #down_arrow {
+    display: block;
+  }
+  #up_arrow {
+    display: none;
+  }
+}
+
+button.dropdown-btn:hover {
+  // color: grey;
+  background: rgba(1, 1, 1, 0.28);
+}
+
+.dropdown-container {
+  display: none;
+}
+
+.dropdown-container {
+  a {
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+#dd {
+  height: auto !important;
+  display: block !important;
+  .dropdown-container {
+    a {
+      padding: 1vh 2vw;
+    }
+  }
+}
+
+//! button section ends...............................................
+
+//! head row section >>
+.head-row {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 8px lightgray;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $pure-white;
+}

@@ -1,0 +1,548 @@
+@import "../universal/font";
+@import "../universal/color";
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  .modal-content {
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 10px lightgray;
+    background-color: $pure-white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px lightgray;
+    z-index: 100;
+
+    .modal-head {
+      width: 100%;
+      height: 7vh;
+      border-bottom: 0.5px solid lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .cross-icon {
+        font-size: 1.6vw;
+        position: absolute;
+        cursor: pointer;
+        order: 1;
+        left: 93%;
+        top: 20%;
+      }
+
+      p {
+        font-size: 1.5vw;
+        color: gray;
+        text-transform: capitalize;
+      }
+    }
+
+    .modal-body {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 3vw;
+      // border: 1px solid red;
+      form {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+
+        input#inputCountry {
+          width: 90%;
+          height: 6vh;
+          padding-left: 1vw;
+          font-size: 16px;
+          font-weight: 600;
+          border: 1px solid $primary-blue;
+          position: relative;
+          @include font($poppins, 500, 1.2);
+          color: $primary-blue;
+        }
+
+        input:focus {
+          outline: none;
+          border: 1px solid lightgray;
+        }
+        button {
+          width: 6vw;
+          height: 5vh;
+          border-radius: 5px;
+          padding-left: 1vw;
+          font-size: 16px;
+          font-weight: 400;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: $poppins;
+          margin-left: 75%;
+          border: 1px solid $primary-blue;
+          color: $primary-blue;
+        }
+        button:hover {
+          background-color: $primary-blue;
+          color: $pure-white;
+          border: none;
+        }
+      }
+    }
+
+    .modal-foot {
+      // position: absolute;
+      @extend .modal-head;
+      justify-content: center;
+      padding: 0 0vw 0 0;
+      // margin-top: 37%;
+      border-top: 0.5px solid lightgray;
+      #message {
+        font-size: 1.4vw;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.modal-container-state {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  .modal-content {
+    width: 30vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 10px lightgray;
+    background-color: $pure-white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px lightgray;
+    z-index: 100;
+
+    .modal-head {
+      width: 100%;
+      height: 7vh;
+      border-bottom: 0.5px solid lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .cross-icon {
+        font-size: 1.6vw;
+        position: absolute;
+        cursor: pointer;
+        order: 1;
+        left: 93%;
+        top: 20%;
+      }
+
+      p {
+        font-size: 1.5vw;
+        color: gray;
+        text-transform: capitalize;
+      }
+    }
+
+    .modal-body {
+      width: 100%;
+      height: 100%;
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: center;
+      // align-items: center;
+      gap: 3vw;
+      // border: 1px solid red;
+
+      form {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        gap: 2vh;
+        // border: 1px solid orange;
+        .form-content {
+          // border: 1px solid blue;
+          width: 100%;
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 2vh;
+
+          select#stateDropdown {
+            width: 90%;
+            height: 30%;
+            padding-left: 2vw;
+          }
+          input#inputState {
+            width: 90%;
+            height: 6vh;
+
+            padding-left: 1vw;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid $primary-blue;
+            position: relative;
+            @include font($poppins, 500, 1.2);
+            color: $primary-blue;
+          }
+
+          input:focus {
+            outline: none;
+            border: 1px solid lightgray;
+          }
+        }
+        div.btn {
+          width: 100%;
+          // height:100%;
+          // border: 1px solid orange;
+
+          button[type="button"].insertbtn {
+            width: 6vw;
+            height: 5vh;
+            border-radius: 5px;
+            padding-left: 1vw;
+            font-size: 16px;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $poppins;
+            margin-left: 75%;
+            border: 1px solid $primary-blue;
+            color: $primary-blue;
+          }
+          button[type="button"].insertbtn:hover {
+            background-color: $primary-blue;
+            color: $pure-white;
+            border: none;
+          }
+        }
+      }
+    }
+
+    .modal-foot {
+      // position: absolute;
+      display: none;
+      @extend .modal-head;
+      justify-content: center;
+      padding: 0 0vw 0 0;
+      // margin-top: 37%;
+      border-top: 0.5px solid lightgray;
+      #message {
+        font-size: 1.4vw;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+//city-section
+.modal-container-city {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  .modal-content {
+    width: 30vw;
+    height: 42vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 10px lightgray;
+    background-color: $pure-white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px lightgray;
+    z-index: 100;
+
+    .modal-head {
+      width: 100%;
+      height: 7vh;
+      border-bottom: 0.5px solid lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .cross-icon {
+        font-size: 1.6vw;
+        position: absolute;
+        cursor: pointer;
+        order: 1;
+        left: 93%;
+        top: 20%;
+      }
+
+      p {
+        font-size: 1.5vw;
+        color: gray;
+        text-transform: capitalize;
+      }
+    }
+
+    .modal-body {
+      width: 100%;
+      height: 100%;
+      gap: 3vw;
+
+      form {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        margin-top: 2vh;
+        .input-section {
+          width: 100%;
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 2vh;
+
+          select#country-dd,
+          select#state-dd {
+            width: 90%;
+            height: 30%;
+            padding-left: 2vw;
+          }
+          input#inputCity {
+            width: 90%;
+            height: 6vh;
+
+            padding-left: 1vw;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid $primary-blue;
+            position: relative;
+            @include font($poppins, 500, 1.2);
+            color: $primary-blue;
+          }
+
+          input:focus {
+            outline: none;
+            border: 1px solid lightgray;
+          }
+        }
+        div.btn-section {
+          width: 100%;
+
+          button[type="button"].insertbtn {
+            width: 6vw;
+            height: 5vh;
+            border-radius: 5px;
+            padding-left: 1vw;
+            font-size: 16px;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $poppins;
+            margin-left: 75%;
+            border: 1px solid $primary-blue;
+            color: $primary-blue;
+          }
+          button[type="button"].insertbtn:hover {
+            background-color: $primary-blue;
+            color: $pure-white;
+            border: none;
+          }
+        }
+      }
+    }
+
+    .modal-foot {
+      // position: absolute;
+      display: none;
+      @extend .modal-head;
+      justify-content: center;
+      padding: 0 0vw 0 0;
+      // margin-top: 37%;
+      border-top: 0.5px solid lightgray;
+      #message {
+        font-size: 1.4vw;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.modal-container-user {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  .modal-content {
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 10px lightgray;
+    background-color: $pure-white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px lightgray;
+    z-index: 100;
+
+    .modal-head {
+      width: 100%;
+      height: 7vh;
+      border-bottom: 0.5px solid lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .cross-icon {
+        font-size: 1.6vw;
+        position: absolute;
+        cursor: pointer;
+        order: 1;
+        left: 93%;
+        top: 20%;
+      }
+
+      p {
+        font-size: 1.5vw;
+        color: gray;
+        text-transform: capitalize;
+      }
+    }
+
+    .modal-body {
+      width: 100%;
+      height: 100%;
+      gap: 3vw;
+
+      form {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        margin-top: 2vh;
+        .input-section {
+          width: 100%;
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 2vh;
+
+          select#country-dd,
+          select#state-dd {
+            width: 90%;
+            height: 30%;
+            padding-left: 2vw;
+          }
+          input {
+            width: 90%;
+            height: 6vh;
+
+            padding-left: 1vw;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid $primary-blue;
+            position: relative;
+            @include font($poppins, 500, 1.2);
+            color: $primary-blue;
+          }
+
+          input:focus {
+            outline: none;
+            border: 1px solid lightgray;
+          }
+        }
+        div.btn-section {
+          width: 100%;
+
+          button[type="button"] {
+            width: 6vw;
+            height: 5vh;
+            border-radius: 5px;
+            padding-left: 1vw;
+            font-size: 16px;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $poppins;
+            margin-left: 75%;
+            border: 1px solid $primary-blue;
+            color: $primary-blue;
+          }
+          button[type="button"]:hover {
+            background-color: $primary-blue;
+            color: $pure-white;
+            border: none;
+          }
+        }
+      }
+    }
+
+    .modal-foot {
+      // position: absolute;
+      display: none;
+      @extend .modal-head;
+      justify-content: center;
+      padding: 0 0vw 0 0;
+      // margin-top: 37%;
+      border-top: 0.5px solid lightgray;
+      #message {
+        font-size: 1.4vw;
+        overflow: hidden;
+      }
+    }
+  }
+}
