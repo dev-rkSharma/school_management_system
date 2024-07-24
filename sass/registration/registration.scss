@@ -4,6 +4,6 @@
 * {
   margin: 0;
   padding: 0;
-  @include font($poppins, 500, 2);
+  @include font($family:$poppins, $weight:500, $size:1vw);
 }
 
