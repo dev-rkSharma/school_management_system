@@ -28,10 +28,62 @@
   align-items: center;
   border: 1ps solid white;
 }
-.bodyContent .sideContent h1 {
+.bodyContent .sideContent .user h1 {
   color: #ffffff;
   font-family: "Poppins", sans-serif !important;
   font-weight: 400 !important;
   font-size: 1.8vw !important;
   text-transform: capitalize !important;
+}
+.bodyContent .sideContent ul {
+  padding: 1vh 2.5vw;
+  margin-top: 5vh;
+}
+.bodyContent .sideContent ul li,
+.bodyContent .sideContent ul .dropdown-btn {
+  list-style: none;
+  font-size: 1.8vw;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+.bodyContent .sideContent ul li a,
+.bodyContent .sideContent ul .dropdown-btn a {
+  text-decoration: none;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.4vw !important;
+  text-transform: capitalize !important;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.bodyContent .sideContent ul li a:hover,
+.bodyContent .sideContent ul .dropdown-btn a:hover {
+  background: rgba(1, 1, 1, 0.28);
+  text-decoration: underline;
+}
+.bodyContent .sideContent ul li a:active,
+.bodyContent .sideContent ul .dropdown-btn a:active {
+  color: #ffffff;
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+}
+.bodyContent .sideContent ul li:hover {
+  background: rgba(1, 1, 1, 0.28);
+}
+.bodyContent .mainContent {
+  background-color: #fdfffc;
+  width: 82%;
+  display: grid;
+  gap: 5vh;
+  align-content: start;
+  position: absolute;
+  top: 0;
+  left: 18%;
+  transition: left 0.3s, width 0.3s;
 }/*# sourceMappingURL=newdb.css.map */

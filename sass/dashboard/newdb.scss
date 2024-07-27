@@ -30,11 +30,10 @@
       border: 1ps solid white;
       h1 {
         color: $pure-white;
-        @include poppins($poppins, 400, 1.8vw);
+        @include font($poppins, 400, 1.8vw);
       }
     }
     ul {
-      @include flex-col;
       padding: 1vh 2.5vw;
       margin-top: 5vh;
 
@@ -52,7 +51,7 @@
           text-decoration: none;
           color: $pure-white;
           letter-spacing: 2px;
-          @include poppins($poppins, 400, 1.4vw);
+          @include font($poppins, 400, 1.4vw);
           width: 100%;
           height: 100%;
           display: flex;

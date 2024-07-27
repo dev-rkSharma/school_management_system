@@ -1,9 +1,0 @@
-@import "../universal/color";
-@import "../universal/font";
-
-* {
-  margin: 0;
-  padding: 0;
-  @include font($family:$poppins, $weight:500, $size:1vw);
-}
-
