@@ -34,6 +34,7 @@
   font-weight: 400 !important;
   font-size: 1.8vw !important;
   text-transform: capitalize !important;
+  color: black;
 }
 .bodyContent .sideContent ul {
   padding: 1vh 2.5vw;
@@ -57,6 +58,7 @@
   font-weight: 400 !important;
   font-size: 1.4vw !important;
   text-transform: capitalize !important;
+  color: black;
   width: 100%;
   height: 100%;
   display: flex;

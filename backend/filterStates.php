@@ -14,22 +14,19 @@ $output = [
 
 ];
 
-$cond = (@$country_id && @$country_id != 0) ? "where s.country_id = '$country_id'" : "";
+$cond = ($country_id && $country_id != 0) ? "where s.country_id = $country_id" : "";
 
-if (1) {
-    // $sql = "select * from state_master s  where s.country_id = 7 and removed = 'n'";
-    $sql2 = "select 1 as sno,  s.state_id, s.state_name, count(ci.city_id) as number_of_cities from state_master s inner join city_master ci on s.state_id = ci.state_id $cond group by s.state_id";
+
+    $sql2 = "select  s.state_id, s.state_name, count(ci.city_id) as number_of_cities from state_master s left join city_master ci on s.state_id = ci.state_id $cond group by s.state_id order by s.state_name";
     $result = mysqli_query($conn, $sql2);
     if (mysqli_num_rows($result) > 0) {
         $output['status'] = 2;
         $output['message'] = 'States fetched successfully';
+        $counter = 0;
         while ($row = mysqli_fetch_assoc($result)) {
-            $output['data'] = [
-                'id' => @$row['id'],
-                'state_name' => @$row['state_name']
-            ];
+            
             echo "<tr>";
-            echo "<td>" . @$row['sno'] . "</td>";
+            echo "<td>" . ++$counter . "</td>";
             echo "<td>" . @$row['state_name'] . "</td>";
             echo "<td>" . @$row['number_of_cities'] . "</td>";
             echo "<td> <a href=''><span id='up_arrow'  class='material-symbols-outlined action-icons-buttons c-green'>
@@ -44,7 +41,7 @@ if (1) {
         $output['message'] = 'No states found for this country_id';
         $output['data'] = $country_id;
     }
-}
+
 
 mysqli_close($conn);
 // echo json_encode($output);

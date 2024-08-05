@@ -17,6 +17,7 @@
   border: 1px solid lightgray;
   padding: 1%;
   letter-spacing: 1px;
+  text-align: center;
 }
 .data-table tr td {
   font-family: "Poppins", sans-serif;

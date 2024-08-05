@@ -76,6 +76,7 @@
   font-weight: 500 !important;
   font-size: 1.2 !important;
   text-transform: capitalize !important;
+  color: black;
   color: #0F17AE;
 }
 .modal-container .modal-content .modal-body form input:focus {
@@ -197,6 +198,7 @@
   font-weight: 500 !important;
   font-size: 1.2 !important;
   text-transform: capitalize !important;
+  color: black;
   color: #0F17AE;
 }
 .modal-container-state .modal-content .modal-body form .form-content input:focus {
@@ -324,6 +326,7 @@
   font-weight: 500 !important;
   font-size: 1.2 !important;
   text-transform: capitalize !important;
+  color: black;
   color: #0F17AE;
 }
 .modal-container-city .modal-content .modal-body form .input-section input:focus {
@@ -451,6 +454,7 @@
   font-weight: 500 !important;
   font-size: 1.2 !important;
   text-transform: capitalize !important;
+  color: black;
   color: #0F17AE;
 }
 .modal-container-user .modal-content .modal-body form .input-section input:focus {

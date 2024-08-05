@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   text-transform: capitalize;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.2vw !important;
+  text-transform: capitalize !important;
+  color: black;
 }
 
 body#registration-page {
@@ -8,8 +14,7 @@ body#registration-page {
   justify-content: center;
   background: rgba(0, 0, 0, 0.6);
 }
-
-main {
+body#registration-page main {
   width: 80%;
   height: 200vh;
   box-shadow: 1px 1px 10px grey;
@@ -18,59 +23,200 @@ main {
   align-items: center;
   justify-content: center;
   gap: 2%;
-  background-color: whitesmoke;
+  background-color: white;
 }
-main div#form-heading {
+body#registration-page main div#form-heading {
   border: 1px solid black;
   width: 90%;
   text-align: center;
 }
-main div#form-heading h1 {
-  font-family: "cascadia code", "sans-serif", "monospace";
-  font-weight: 300;
+body#registration-page main div#form-heading h1 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 2em !important;
+  text-transform: capitalize !important;
+  color: black;
 }
-main div#form-container {
-  border: 1px solid green;
+body#registration-page main div#form-container {
   width: 90%;
   height: 85%;
 }
-main div#form-container form {
+body#registration-page main div#form-container form {
   width: 100%;
   display: flex;
   height: 100%;
   align-items: center;
   flex-direction: column;
 }
-main div#form-container form div.row {
-  border: 1px solid red;
+body#registration-page main div#form-container form div.row {
   width: 100%;
   height: 100%;
 }
-main div#form-container form div.row fieldset {
+body#registration-page main div#form-container form div.row fieldset, body#registration-page main div#form-container form div.row fieldset.address-bar {
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   box-sizing: border-box;
   align-items: center;
+  border: 1px solid blue;
 }
-main div#form-container form div.row fieldset section.section-row {
-  border: 1px solid red;
+body#registration-page main div#form-container form div.row fieldset legend, body#registration-page main div#form-container form div.row fieldset.address-bar legend {
+  color: blue;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address, body#registration-page main div#form-container form div.row fieldset section.section-row-birth {
   width: 45%;
   display: flex;
   flex-direction: column;
   height: 95%;
   justify-content: center;
 }
-main div#form-container form div.row fieldset section.section-row label {
+body#registration-page main div#form-container form div.row fieldset section.section-row label, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2 label, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address label, body#registration-page main div#form-container form div.row fieldset section.section-row-birth label {
   font-size: 1vw;
   color: grey;
   font-family: "cascadia code";
   font-weight: 100;
   display: none;
 }
-main div#form-container form div.row fieldset section.section-row input {
+body#registration-page main div#form-container form div.row fieldset section.section-row input[type=text], body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2 input[type=text], body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address input[type=text], body#registration-page main div#form-container form div.row fieldset section.section-row-birth input[type=text], body#registration-page main div#form-container form div.row fieldset section.section-row input[type=password], body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2 input[type=password], body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address input[type=password], body#registration-page main div#form-container form div.row fieldset section.section-row-birth input[type=password] {
   border: none;
   border-bottom: 1px solid blue;
+  height: 6vh;
+  padding-left: 1vw;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.2vw !important;
+  text-transform: capitalize !important;
+  color: blue;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-contact {
+  width: 32%;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-contact label {
+  font-size: 1vw;
+  color: grey;
+  font-family: "cascadia code";
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-contact input {
+  width: 90%;
+  height: 60%;
+  padding-left: 1vw;
+  color: blue;
+  font-weight: 400;
+  border: none;
+  border-bottom: 2px solid blue;
+  border-radius: 5px;
+  letter-spacing: 2px;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-birth {
+  width: 80%;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-birth input[type=date] {
+  Width: 99%;
+  height: 50%;
+  border: 1px solid blue;
+  color: blue;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-activity {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-activity label {
+  width: 20%;
+}
+body#registration-page main div#form-container form div.row fieldset section.section-row-activity label input[type=checkbox] {
+  width: 20%;
+  height: 20%;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar, body#registration-page main div#form-container form div.row fieldset.address-bar {
+  flex-direction: column;
+  gap: 5%;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address {
+  flex-direction: row;
+  width: 80%;
+  gap: 5%;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-row:first-child, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-address--row2:first-child, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-row-birth:first-child, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-row-address:first-child {
+  display: flex;
+  justify-content: start;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-row:last-child input, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-address--row2:last-child input, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-row-birth:last-child input, body#registration-page main div#form-container form div.row fieldset.address-bar section.section-row-address section.section-row-address:last-child input {
+  width: 40%;
+  margin: auto;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2 {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  gap: 7%;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2 section.section-inner-row {
+  width: 90%;
+}
+body#registration-page main div#form-container form div.row fieldset.address-bar section.section-address--row2 section.section-inner-row select {
+  width: 100%;
   height: 5vh;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid blue;
+  color: blue;
+}
+body#registration-page main div#form-container form div.row fieldset.gender, body#registration-page main div#form-container form div.row fieldset.gender.address-bar {
+  justify-content: flex-start;
+  gap: 5%;
+}
+body#registration-page main div#form-container form div.row fieldset.gender section.section-row-gender {
+  width: 20%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+body#registration-page main div#form-container form div.row fieldset.gender section.section-row-gender input[Type=radio] {
+  width: 50%;
+  height: 40%;
+}
+body#registration-page main div#form-container form div.row fieldset.class select {
+  width: 80%;
+  height: 50%;
+  border: 1px solid blue;
+  color: blue;
+}
+body#registration-page main div#form-container form div.row-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body#registration-page main div#form-container form div.row-button button {
+  width: 50%;
+  height: 60%;
+  border: none;
+  background-color: blue;
+  font-size: 2vw;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body#registration-page main div#form-container form div.row-button button:active {
+  color: white;
+  border: 3px solid white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.error {
+  border: 10px solid red;
 }/*# sourceMappingURL=main.css.map */

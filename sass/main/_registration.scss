@@ -1,90 +1,228 @@
-*{
-    text-transform:capitalize;
+@use "../universal/font" as f;
+
+* {
+  text-transform: capitalize;
+  @include f.font($size:1.2vw);
 }
 
-body#registration-page{
-    // width:100vw;
-    height: 300%;
-    display:flex;
-    justify-content:center;
-    background:rgba(0,0,0,.6);
-}
-main{
-    // border: 1px solid grey;
-    width:80%;
+body#registration-page {
+  height: 300%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+
+  main {
+    width: 80%;
     height: 200vh;
-    box-shadow:1px 1px 10px grey;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:2%;
-    background-color: whitesmoke;
-
-    div#form-heading{
-        border:1px solid black;
-        width:90%;
-        text-align: center;
-        
-        h1{
-            font-family: 'cascadia code', 'sans-serif', 'monospace';
-            font-weight:300;
-        }
-
+    box-shadow: 1px 1px 10px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    background-color: white;
+    div#form-heading {
+      border: 1px solid black;
+      width: 90%;
+      text-align: center;
+      h1 {
+        @include f.font($size:2em,$weight:400);
+      }
     }
-
-    div#form-container{
-        border:1px solid green;
-        width: 90%;
-        height:85%;
-        
-        form{
-            width: 100%;
-            display:flex;
-            height:100%;
+    div#form-container {
+      width: 90%;
+      height: 85%;
+      form {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+        div.row {
+          width: 100%;
+          height: 100%;
+          fieldset {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            box-sizing: border-box;
             align-items: center;
-            flex-direction:column;
-            div.row{
-                border:1px solid red;
-                width:100%;
-                height:100%;
-                fieldset{
-                    height:100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content:space-around;
-                    box-sizing:border-box;
-                    align-items: center;
-
-                    section.section-row{
-                        border:1px solid red;
-                        width:45%;
-                        display:flex;
-                        flex-direction: column;
-                        height:95%;
-                        // align-items: center;
-                        justify-content: center;
-
-                        label{
-                            font-size:1vw;
-                            color: grey;
-                            font-family:'cascadia code';
-                            font-weight: 100;
-                            display:none;
-                        }
-
-                        input{
-                            // width:98%;
-                            border:none;
-                            border-bottom:1px solid blue;
-                            height: 5vh;
-                        }
-
-                        
-
-                    }
-                }
+            border:1px solid blue;
+            legend{
+              color:blue;
             }
+            section.section-row {
+              width: 45%;
+              display: flex;
+              flex-direction: column;
+              height: 95%;
+              justify-content: center;
+              label {
+                font-size: 1vw;
+                color: grey;
+                font-family: "cascadia code";
+                font-weight: 100;
+                display: none;
+              }
+              input[type="text"],input[type='password'] {
+                border: none;
+                border-bottom: 1px solid blue;
+                height: 6vh;
+                padding-left: 1vw;
+                border-radius: 5px;
+                @include f.font($weight: 400, $size: 1.2vw, $color: blue);
+              }
+            }
+
+            section.section-row-contact {
+              width: 32%;
+              height:96%;
+              display: flex;
+              flex-direction: column;
+              label{
+                font-size: 1vw;
+                color: grey;
+                font-family: "cascadia code";
+                }
+              input{
+                width:90%;
+                height:60%;
+                padding-left: 1vw;
+                color:blue;
+                font-weight:400;
+                border:none;
+                border-bottom: 2px solid blue;
+                border-radius:5px;
+                letter-spacing: 2px;
+              }
+            }
+            section.section-row-birth{
+              @extend .section-row;
+              width:80%;
+              input[type='date']{
+                Width:99%;
+                height:50%;
+                border:1px solid blue;
+                color:blue; 
+
+              }
+            }
+
+            section.section-row-activity{
+              width:90%;
+              height:50%;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              gap:8%;
+              label{
+                width:20%;
+                input[type='checkbox']{
+                  width: 20%;
+                  height:20%;
+                }
+              }
+            }
+           
+          }
+          fieldset.address-bar {
+            @extend fieldset;
+            flex-direction: column;
+            gap: 5%;
+            section.section-row-address {
+              @extend .section-row;
+              flex-direction: row;
+              width: 80%;
+              gap: 5%;
+              section.section-row:first-child {
+                display: flex;
+                justify-content: start;
+              }
+              section.section-row:last-child {
+
+                input {
+                  width: 40%;
+                  margin: auto;
+                }
+              }
+            }
+            section.section-address--row2 {
+              @extend .section-row;
+              flex-direction: row;
+              justify-content: space-around;
+              width: 80%;
+              gap: 7%;
+              section.section-inner-row {
+                width: 90%;
+                select {
+                  width: 100%;
+                  height: 5vh;
+                  border-radius: 5px;
+                  text-align: center;
+                  border:1px solid blue;
+                  color:blue;  
+                }
+              }
+            }
+          }
+          fieldset.gender{
+            
+            justify-content:flex-start;
+            gap:5%;
+            section.section-row-gender{
+              width:20%;
+              height:80%;
+              display:flex;
+              justify-content:flex-end;
+              align-items:center;
+              input[Type=radio]{
+                width:50%;
+                height:40%;
+              }
+            }
+          }
+          fieldset.class{
+            select{
+              width:80%;
+              height:50%;
+              border:1px solid blue;
+              color:blue;
+            }
+          }
         }
+        div.row-button{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          button{
+            width:50%;
+            height:60%;
+            border:none;
+            background-color: blue;
+            font-size: 2vw;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+            &:active{
+              color:white;
+              border:3px solid white;
+            }
+          }
+          
+        }
+      }
     }
+  }
+}
+
+input:focus{
+  outline: none;
+}
+
+.error{
+  border: 10px solid red;
+
 }

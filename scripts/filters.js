@@ -28,10 +28,7 @@ function load_filtered_page(path) {
   xhr.open("post", path, true);
   xhr.setRequestHeader("content-type", "application/json");
   xhr.send(jsonData);
-  var bodyPart = document.getElementById("ajaxContent");
   xhr.onload = function () {
-    // console.log(this.responseText);
-    // bodyPart.innerHTML = this.responseText;
     document.querySelector("tbody").innerHTML = this.responseText;
   };
 }

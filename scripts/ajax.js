@@ -36,7 +36,6 @@ var countryPage = document
     http.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         bodyPart.innerHTML = this.responseText;
-        //todo edit button click event
         document.getElementById('modal-btn').addEventListener('click', modalshow);//open modal
         document.getElementById('insertCountryBtn').addEventListener('click', insertData) //insert country
         //open modal

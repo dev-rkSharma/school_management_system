@@ -94,18 +94,18 @@ $tableHeading = "user list";
                         echo "<tr>";
                         
                         echo "<td>" . ++$counter . "</td>
-                            <td>{$row['full_name']}</td>
+                            <td>{$row['name']}</td>
                             <td>{$row['username']}</td>
                             <td>{$row['email']}</td>";
 
                         echo "<td>
-                                <a href='javascript:void(0);' class='edit_usr' data-id='{$row['user_id']}' data-name='{$row['full_name']}' data-username='{$row['username']}' data-email='{$row['email']}'>
-                                    <span class='material-symbols-outlined action-icons-buttons c-green' data-id='{$row['user_id']}' data-name='{$row['full_name']}' data-username='{$row['username']}' data-email='{$row['email']}'>
+                                <a href='javascript:void(0);' class='edit_usr' data-id='{$row['user_id']}' data-name='{$row['name']}' data-username='{$row['username']}' data-email='{$row['email']}'>
+                                    <span class='material-symbols-outlined action-icons-buttons c-green' data-id='{$row['user_id']}' data-name='{$row['name']}' data-username='{$row['username']}' data-email='{$row['email']}'>
                                         edit
                                     </span>
                                 </a>
-                                <a href='javascript:void(0);'  class='delete_usr' data-id='{$row['user_id']}' data-name='{$row['full_name']}'>
-                                    <span class='material-symbols-outlined action-icons-buttons c-red' data-id='{$row['user_id']}' data-name='{$row['full_name']}'>delete</span>
+                                <a href='javascript:void(0);'  class='delete_usr' data-id='{$row['user_id']}' data-name='{$row['name']}'>
+                                    <span class='material-symbols-outlined action-icons-buttons c-red' data-id='{$row['user_id']}' data-name='{$row['name']}'>delete</span>
                                 </a>      
                             </td>";
                         

@@ -31,11 +31,11 @@
   border: 1ps solid white;
 }
 .bodyContent .sideContent .user h1 {
-  color: #ffffff;
   font-family: "Poppins", sans-serif !important;
   font-weight: 400 !important;
   font-size: 1.5vw !important;
   text-transform: capitalize !important;
+  color: #ffffff;
 }
 .bodyContent .sideContent ul {
   display: flex;
@@ -52,16 +52,17 @@
   height: 8vh;
   display: flex;
   align-items: center;
+  color: #ffffff;
 }
 .bodyContent .sideContent ul li a,
 .bodyContent .sideContent ul .dropdown-btn a {
   text-decoration: none;
-  color: #ffffff;
   letter-spacing: 2px;
   font-family: "Poppins", sans-serif !important;
   font-weight: 400 !important;
-  font-size: 1.4vw !important;
+  font-size: 1.5vw !important;
   text-transform: capitalize !important;
+  color: #ffffff;
   width: 100%;
   height: 100%;
   display: flex;
@@ -70,7 +71,6 @@
 .bodyContent .sideContent ul li a:hover,
 .bodyContent .sideContent ul .dropdown-btn a:hover {
   background: rgba(1, 1, 1, 0.28);
-  text-decoration: underline;
 }
 .bodyContent .sideContent ul li a:active,
 .bodyContent .sideContent ul .dropdown-btn a:active {
@@ -163,6 +163,7 @@ button.dropdown-btn {
   font-weight: 400 !important;
   font-size: 1.5vw !important;
   text-transform: capitalize !important;
+  color: black;
 }
 button.dropdown-btn .drop-down-logo {
   font-size: 2vw !important;

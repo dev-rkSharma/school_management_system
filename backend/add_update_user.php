@@ -14,7 +14,7 @@ $output = [
     "data" => [],
 ];
 
-$cmd = $id ? "UPDATE user_master SET full_name = '$name', username = '$username', email = '$email' WHERE user_id = $id" : "INSERT INTO user_master (full_name, username, email, password) VALUES ('$name', '$username', '$email', '$password')";
+$cmd = $id ? "UPDATE user_master SET name = '$name', username = '$username', email = '$email' WHERE user_id = $id" : "INSERT INTO user_master (name, username, email, password) VALUES ('$name', '$username', '$email', '$password')";
 
 $sql = $cmd;
 $result = mysqli_query($conn, $sql);

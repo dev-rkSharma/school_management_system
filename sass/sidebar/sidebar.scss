@@ -1,5 +1,5 @@
-@import "../../sass/universal/_color.scss";
-@import "../../sass/universal/font";
+@use "../universal/color" as color;
+@use "../universal/font" as font;
 
 * {
   margin: 0;
@@ -25,8 +25,8 @@
   display: flex;
 
   .sideContent {
-    background-color: $primary-blue;
-    color: $pure-white;
+    background-color: color.$primary-blue;
+    color: color.$pure-white;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,9 +43,7 @@
       align-items: center;
       border: 1ps solid white;
       h1 {
-        color: $pure-white;
-        // @include poppins($poppins, 400, 1.8vw);
-        @include font();
+        @include font.font($color:color.$pure-white);
       }
     }
     ul {
@@ -61,12 +59,13 @@
         height: 8vh;
         display: flex;
         align-items: center;
+        color : color.$pure-white;
 
         a {
           text-decoration: none;
-          color: $pure-white;
+          // color: color.$pure-white;
           letter-spacing: 2px;
-          @include font($poppins, 400, 1.4vw);
+          @include font.font($color:color.$pure-white);
           width: 100%;
           height: 100%;
           display: flex;
@@ -77,10 +76,9 @@
           // color: grey;
           background: rgba(1, 1, 1, 0.28);
 
-          text-decoration: underline;
         }
         a:active {
-          color: $pure-white;
+          color: color.$pure-white;
           text-decoration: dashed;
         }
       }
@@ -126,12 +124,12 @@
 
 .collapsed #person_logo {
   font-size: 3vw !important;
-  color: $pure-white;
+  color: color.$pure-white;
   cursor: pointer;
 }
 
 .collapsed #person_logo:hover {
-  color: $pure-white;
+  color: color.$pure-white;
 }
 
 .collapsed #username {
@@ -161,7 +159,7 @@
 }
 
 .collapsed .side-bar-icon:hover {
-  color: $pure-white;
+  color: color.$pure-white;
   cursor: pointer;
 }
 
@@ -177,10 +175,10 @@
 
 //!button section >>
 button.dropdown-btn {
-  background-color: $primary-blue;
+  background-color: color.$primary-blue;
   border: none !important;
-  color: $pure-white;
-  @include font($poppins, 400, 1.5vw);
+  color: color.$pure-white;
+  @include font.font();
 
   .drop-down-logo {
     font-size: 2vw !important;
@@ -232,5 +230,5 @@ button.dropdown-btn:hover {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: $pure-white;
+  background-color: color.$pure-white;
 }

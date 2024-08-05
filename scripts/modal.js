@@ -1,9 +1,7 @@
-// universally opening  modal 
+// universally opening  modal
 function modalshow() {
-  
   const modal = document.getElementById("modal");
   modal.classList.remove("hidden");
-  
 }
 
 //users modal contents
@@ -16,7 +14,6 @@ function showElement() {
   document.getElementById("password").value = "";
   document.getElementById("password").style.display = "";
 }
-
 
 function modalContent() {
   modalshow();
@@ -89,7 +86,6 @@ function add_users() {
 
 // editing users --------------------------------------------------
 function edit_users(e) {
-
   e.preventDefault();
 
   modalshow();
@@ -119,7 +115,7 @@ function edit_users(e) {
   let submit_btn = document.getElementById("submit_btn");
   submit_btn.innerHTML = "Update";
 
-  //
+  
   submit_btn.replaceWith(submit_btn.cloneNode(true));
   submit_btn = document.getElementById("submit_btn");
 
@@ -137,9 +133,14 @@ function edit_users(e) {
     xhr.send(JSON.stringify(form_value));
     xhr.onload = function () {
       if (this.status === 200) {
-        const response = JSON.parse(this.responseText)
-          ? JSON.parse(this.responseText)
-          : console.error(this.responseText);
+        let response;
+        try {
+          response = JSON.parse(this.responseText);
+        } catch (error) {
+          console.error("Failed to parse JSON:", error);
+          console.error("Original response:", this.responseText);
+          response = null;
+        }
 
         if (response.status == 1) {
           console.info(response.message);
@@ -159,11 +160,10 @@ function delete_users(e) {
 
   let id = e.target.getAttribute("data-id");
   let name = e.target.getAttribute("data-name");
-  
 
   let confirmDelete = confirm(`Are you sure you want to delete : " ${name} "?`);
   if (confirmDelete) {
-  console.debug("Deleting user with id : " + id);
+    console.debug("Deleting user with id : " + id);
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "../backend/delete_users.php", true);
     xhr.setRequestHeader("Content-type", "application/json");
@@ -176,7 +176,6 @@ function delete_users(e) {
         if (response.status == 1) {
           alert(response.message);
           load_user_page(e);
-
         } else if (response.status == 2) {
           alert(response.message);
         } else if (response.status == 3) {
@@ -205,12 +204,12 @@ function load_user_page(e) {
       document
         .getElementById("modal-btn")
         .addEventListener("click", modalContent);
-        
+
       document
         .getElementById("submit_btn")
         .addEventListener("click", add_users);
 
-      document.querySelectorAll('.delete_usr').forEach(e => {
+      document.querySelectorAll(".delete_usr").forEach((e) => {
         e.addEventListener("click", delete_users);
       });
     }
@@ -218,5 +217,3 @@ function load_user_page(e) {
   http.open("GET", "user_master.php", true);
   http.send();
 }
-
-

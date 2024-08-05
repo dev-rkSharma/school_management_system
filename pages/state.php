@@ -18,8 +18,8 @@
                   <div class="filter-section">
                         <!-- filter section -->
                         <div class="filter-box">
-                              <select name="country-filter" id="country-filter" >
-
+                              <select name="country-filter" id="country-filter">
+                              <!-- fetching data from filter.js -->
                               </select>
                         </div>
                         <!-- filter section ends -->
@@ -89,9 +89,9 @@
                               <?php
 
                               $query = "SELECT
-                                          @rownum := @rownum + 1 AS sno,
+                                         
                                           s.state_name,
-                                    
+                                          s.state_id,
                                           COUNT(DISTINCT ci.city_id) AS number_of_cities
                                     FROM
                                     (SELECT @rownum := 0) r, state_master s
@@ -101,13 +101,14 @@
                                     GROUP BY
                                           s.state_id
                                     ORDER BY
-                                          sno;
+                                          s.state_name
                                           ";
                               $result = mysqli_query($conn, $query);
                               if (mysqli_num_rows($result)) {
+                                    $counter = 0;
                                     while ($row = mysqli_fetch_array($result)) {
                                           echo "<tr>";
-                                          echo "<td>" . $row['sno'] . "</td>";
+                                          echo "<td>" . ++$counter . "</td>";
                                           echo "<td>" . $row['state_name'] . "</td>";
                                           echo "<td>" . $row['number_of_cities'] . "</td>";
                                           echo "<td> <a href=''><span id='up_arrow'  class='material-symbols-outlined action-icons-buttons c-green'>
