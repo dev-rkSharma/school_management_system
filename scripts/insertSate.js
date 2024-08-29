@@ -1,6 +1,7 @@
 /*
   ! adding states  
 */
+
 function modalStateShow() {
   modalshow();
   //modal show contents to add to state
@@ -16,7 +17,7 @@ function modalStateShow() {
     }
     // taking data from dropdown and adding new state to that perticular country
     document
-      .getElementById("insertStateBtn")
+      .getElementById("insertStateBtn") 
       .addEventListener("click", function () {
         var country_id = document.getElementById("stateDropdown").value;
         var state_name = document.getElementById("inputState").value;

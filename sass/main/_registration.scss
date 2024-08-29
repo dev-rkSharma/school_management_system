@@ -1,228 +1,186 @@
-@use "../universal/font" as f;
+@use "../universal/font" as font;
 
 * {
-  text-transform: capitalize;
-  @include f.font($size:1.2vw);
+  // border:1px solid grey;
+  margin: 0;
+  padding: 0;
 }
 
-body#registration-page {
-  height: 300%;
-  display: flex;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.6);
-
-  main {
-    width: 80%;
-    height: 200vh;
-    box-shadow: 1px 1px 10px grey;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2%;
-    background-color: white;
-    div#form-heading {
-      border: 1px solid black;
-      width: 90%;
-      text-align: center;
-      h1 {
-        @include f.font($size:2em,$weight:400);
-      }
-    }
-    div#form-container {
-      width: 90%;
-      height: 85%;
-      form {
-        width: 100%;
+body#student-registration-form-page {
+  width: 100%;
+  height: 190vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  
+  transform:translate(-50%,-50%);
+  padding: 10vh 0;
+  // background-image: url(../../images/pexels-neosiam-4498792.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-top:4vh;
+  
+  div.form-box {
+    width: 60%;
+    // display:flex;
+    // justify-content:center;
+    // align-items:center;
+    max-width: 60%;
+    padding: 0% 2%;
+    background-color: #a2d2ff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding-top:4vh;
+    position:relative;
+  top:50%;
+  left:68%;
+  bottom:50%;
+    form {
+      display: flex;
+      flex-direction: column;
+      // align-content: center;
+      justify-content: center;
+      gap:2em;
+      div.form-group {
         display: flex;
-        height: 100%;
-        align-items: center;
         flex-direction: column;
-        div.row {
+        section {
+          display: flex;
+          flex-direction: row;
           width: 100%;
-          height: 100%;
-          fieldset {
-            height: 100%;
+          align-items: center;
+          gap: 1%;
+          label {
+            width: 20%;
+            // font-weight: bold;
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            box-sizing: border-box;
+            justify-content: space-between;
             align-items: center;
-            border:1px solid blue;
-            legend{
-              color:blue;
-            }
-            section.section-row {
-              width: 45%;
-              display: flex;
-              flex-direction: column;
-              height: 95%;
-              justify-content: center;
-              label {
-                font-size: 1vw;
-                color: grey;
-                font-family: "cascadia code";
-                font-weight: 100;
-                display: none;
-              }
-              input[type="text"],input[type='password'] {
-                border: none;
-                border-bottom: 1px solid blue;
-                height: 6vh;
-                padding-left: 1vw;
-                border-radius: 5px;
-                @include f.font($weight: 400, $size: 1.2vw, $color: blue);
-              }
-            }
+            @include font.font($size: .9em, $color:#003049);
 
-            section.section-row-contact {
-              width: 32%;
-              height:96%;
-              display: flex;
-              flex-direction: column;
-              label{
-                font-size: 1vw;
-                color: grey;
-                font-family: "cascadia code";
-                }
-              input{
-                width:90%;
-                height:60%;
-                padding-left: 1vw;
-                color:blue;
-                font-weight:400;
-                border:none;
-                border-bottom: 2px solid blue;
-                border-radius:5px;
-                letter-spacing: 2px;
-              }
-            }
-            section.section-row-birth{
-              @extend .section-row;
-              width:80%;
-              input[type='date']{
-                Width:99%;
-                height:50%;
-                border:1px solid blue;
-                color:blue; 
-
-              }
-            }
-
-            section.section-row-activity{
-              width:90%;
-              height:50%;
-              display:flex;
-              justify-content:center;
-              align-items:center;
-              gap:8%;
-              label{
-                width:20%;
-                input[type='checkbox']{
-                  width: 20%;
-                  height:20%;
-                }
-              }
-            }
-           
-          }
-          fieldset.address-bar {
-            @extend fieldset;
-            flex-direction: column;
-            gap: 5%;
-            section.section-row-address {
-              @extend .section-row;
-              flex-direction: row;
-              width: 80%;
-              gap: 5%;
-              section.section-row:first-child {
-                display: flex;
-                justify-content: start;
-              }
-              section.section-row:last-child {
-
-                input {
-                  width: 40%;
-                  margin: auto;
-                }
-              }
-            }
-            section.section-address--row2 {
-              @extend .section-row;
-              flex-direction: row;
-              justify-content: space-around;
-              width: 80%;
-              gap: 7%;
-              section.section-inner-row {
-                width: 90%;
-                select {
-                  width: 100%;
-                  height: 5vh;
-                  border-radius: 5px;
-                  text-align: center;
-                  border:1px solid blue;
-                  color:blue;  
-                }
-              }
+            &:after {
+              content: ":";
+              @include font.font($size: 1.2vw);
             }
           }
-          fieldset.gender{
-            
-            justify-content:flex-start;
-            gap:5%;
-            section.section-row-gender{
-              width:20%;
-              height:80%;
-              display:flex;
-              justify-content:flex-end;
-              align-items:center;
-              input[Type=radio]{
-                width:50%;
-                height:40%;
-              }
-            }
-          }
-          fieldset.class{
-            select{
-              width:80%;
-              height:50%;
-              border:1px solid blue;
-              color:blue;
-            }
+
+          input[type="text"],
+          input[type="email"],
+          input[type="tel"],
+          input[type="date"],
+          input[type="password"],
+          select,
+          input[type="submit"],
+          input[type="reset"],
+          textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px rgba(77, 77, 77, 0.5);
+            font-weight:500;
+            resize:none;
           }
         }
-        div.row-button{
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items:center;
-          button{
-            width:50%;
-            height:60%;
-            border:none;
-            background-color: blue;
-            font-size: 2vw;
-            color:white;
-            border-radius:5px;
-            cursor:pointer;
-            &:active{
-              color:white;
-              border:3px solid white;
+        span.error {
+          p {
+            height: 100%;
+            @include font.font($color: red, $weight: 600, $size: 0.7em);
+            width: 100%;
+            &:before {
+              content: "!! ";
+              color: red;
             }
           }
-          
+          width: max-content;
+          margin-left: auto;
+          // display: none;
         }
       }
     }
   }
 }
 
-input:focus{
-  outline: none;
+//heading --------------------------------------
+div.registration-form-heading {
+  margin:2% 0;
+  h1 {
+    width: 100%;
+    @include font.font($color:#003049,$weight:700,$size:2vw);
+    text-align: center;
+    margin-bottom: 2%;
+  }
 }
 
-.error{
-  border: 10px solid red;
 
+
+
+// buttons--------------------------------------------------
+input[type="submit"] {
+  background-color: #00296b; /* Green */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  &:hover{
+    box-shadow: 1px 1px 20px white;
+  }
+  &:active{
+    outline:2px solid white;
+  }
+}
+
+input[type="reset"] {
+  background-color: #c1121f; /* Red */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.drop-down-region{
+  width:83%;
+  margin-left: auto;
+  section {
+    display: flex;
+    justify-content: space-between;
+    select{
+      width:35% !important;
+    }
+  }
+}
+
+.pincode {
+  display: flex !important;
+  flex-direction: row !important;
+  section{
+    width:50% !important;
+    label{
+      width: 43% !important;
+      // visibility:hidden;
+    }
+    input{
+      width: 80% !important;
+    }
+  }
+  span.error {
+    @extend .error ;
+    margin-left:3px !important;
+
+  }
+}
+
+section.gender:first-child
+{
+  margin-left : 5em !important; 
+}
+
+
+input[type='password'] {
+  width: 30%;
+  // margin-left: auto;
 }

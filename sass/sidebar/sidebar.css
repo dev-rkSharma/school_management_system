@@ -31,10 +31,10 @@
   border: 1ps solid white;
 }
 .bodyContent .sideContent .user h1 {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 1.5vw !important;
-  text-transform: capitalize !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.5vw;
+  text-transform: capitalize;
   color: #ffffff;
 }
 .bodyContent .sideContent ul {
@@ -58,10 +58,10 @@
 .bodyContent .sideContent ul .dropdown-btn a {
   text-decoration: none;
   letter-spacing: 2px;
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 1.5vw !important;
-  text-transform: capitalize !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.5vw;
+  text-transform: capitalize;
   color: #ffffff;
   width: 100%;
   height: 100%;
@@ -159,10 +159,10 @@ button.dropdown-btn {
   background-color: #0F17AE;
   border: none !important;
   color: #ffffff;
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 1.5vw !important;
-  text-transform: capitalize !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.5vw;
+  text-transform: capitalize;
   color: black;
 }
 button.dropdown-btn .drop-down-logo {

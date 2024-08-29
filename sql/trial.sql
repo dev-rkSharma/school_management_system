@@ -54,3 +54,5 @@ select * from section_master;
 INSERT INTO class_master ( class_name ) VALUES(
      'nursery'
 );
+
+SELECT * FROM class_master;

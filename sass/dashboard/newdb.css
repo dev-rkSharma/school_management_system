@@ -30,10 +30,10 @@
 }
 .bodyContent .sideContent .user h1 {
   color: #ffffff;
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 1.8vw !important;
-  text-transform: capitalize !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.8vw;
+  text-transform: capitalize;
   color: black;
 }
 .bodyContent .sideContent ul {
@@ -54,10 +54,10 @@
   text-decoration: none;
   color: #ffffff;
   letter-spacing: 2px;
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 1.4vw !important;
-  text-transform: capitalize !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.4vw;
+  text-transform: capitalize;
   color: black;
   width: 100%;
   height: 100%;

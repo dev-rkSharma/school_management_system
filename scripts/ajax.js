@@ -62,7 +62,8 @@ var countryPage = document
     http.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         bodyPart.innerHTML = this.responseText;
-        Country_filter();
+        Country_filter();//! location: filter.js
+        
       }
     };
 

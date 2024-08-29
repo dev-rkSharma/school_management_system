@@ -80,7 +80,7 @@ $tableHeading = "Class list";
                                     FROM class_master c 
                                     left JOIN section_master s ON c.class_id = s.class_id WHERE c.removed = 'n'
                                      GROUP BY c.class_id
-                                     order by c.class_name
+                                          
                                     ";
                         $result = mysqli_query($conn, $query);
                         if (mysqli_num_rows($result)) {

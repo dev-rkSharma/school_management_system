@@ -3,9 +3,9 @@
 $poppins: "Poppins", sans-serif;
 
 @mixin font($family: $poppins, $weight:400, $size:1.5vw,$color:black) {
-  font-family: $family !important;
-  font-weight: $weight !important;
-  font-size: $size !important;
-  text-transform: capitalize !important;
+  font-family: $family ;
+  font-weight: $weight ;
+  font-size: $size ;
+  text-transform: capitalize ;
   color:$color;
 }
