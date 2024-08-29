@@ -21,7 +21,6 @@
   box-shadow: 1px 1px 10px lightgray;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px lightgray;
   z-index: 100;
 }
 .modal-container .modal-content .modal-head, .modal-container .modal-content .modal-foot {
@@ -68,15 +67,12 @@
   width: 90%;
   height: 6vh;
   padding-left: 1vw;
-  font-size: 16px;
-  font-weight: 600;
   border: 1px solid #0F17AE;
   position: relative;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.2;
   text-transform: capitalize;
-  color: black;
   color: #0F17AE;
 }
 .modal-container .modal-content .modal-body form input:focus {
@@ -135,7 +131,6 @@
   box-shadow: 1px 1px 10px lightgray;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px lightgray;
   z-index: 100;
 }
 .modal-container-state .modal-content .modal-head, .modal-container-state .modal-content .modal-foot {
@@ -190,15 +185,12 @@
   width: 90%;
   height: 6vh;
   padding-left: 1vw;
-  font-size: 16px;
-  font-weight: 600;
   border: 1px solid #0F17AE;
   position: relative;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.2;
   text-transform: capitalize;
-  color: black;
   color: #0F17AE;
 }
 .modal-container-state .modal-content .modal-body form .form-content input:focus {
@@ -261,7 +253,6 @@
   box-shadow: 1px 1px 10px lightgray;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px lightgray;
   z-index: 100;
 }
 .modal-container-city .modal-content .modal-head, .modal-container-city .modal-content .modal-foot {
@@ -318,15 +309,12 @@
   width: 90%;
   height: 6vh;
   padding-left: 1vw;
-  font-size: 16px;
-  font-weight: 600;
   border: 1px solid #0F17AE;
   position: relative;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.2;
   text-transform: capitalize;
-  color: black;
   color: #0F17AE;
 }
 .modal-container-city .modal-content .modal-body form .input-section input:focus {
@@ -389,7 +377,6 @@
   box-shadow: 1px 1px 10px lightgray;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px lightgray;
   z-index: 100;
 }
 .modal-container-user .modal-content .modal-head, .modal-container-user .modal-content .modal-foot {
@@ -446,15 +433,12 @@
   width: 90%;
   height: 6vh;
   padding-left: 1vw;
-  font-size: 16px;
-  font-weight: 600;
   border: 1px solid #0F17AE;
   position: relative;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.2;
   text-transform: capitalize;
-  color: black;
   color: #0F17AE;
 }
 .modal-container-user .modal-content .modal-body form .input-section input:focus {

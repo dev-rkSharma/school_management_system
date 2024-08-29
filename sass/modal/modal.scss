@@ -23,7 +23,6 @@
     box-shadow: 1px 1px 10px lightgray;
     background-color: $pure-white;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px lightgray;
     z-index: 100;
 
     .modal-head {
@@ -73,12 +72,10 @@
           width: 90%;
           height: 6vh;
           padding-left: 1vw;
-          font-size: 16px;
-          font-weight: 600;
           border: 1px solid $primary-blue;
           position: relative;
-          @include font($poppins, 500, 1.2);
-          color: $primary-blue;
+          @include font($poppins, 500, 1.2,$color:$primary-blue);
+          // color: $primary-blue;
         }
 
         input:focus {
@@ -145,7 +142,6 @@
     box-shadow: 1px 1px 10px lightgray;
     background-color: $pure-white;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px lightgray;
     z-index: 100;
 
     .modal-head {
@@ -212,12 +208,9 @@
             height: 6vh;
 
             padding-left: 1vw;
-            font-size: 16px;
-            font-weight: 600;
             border: 1px solid $primary-blue;
             position: relative;
-            @include font($poppins, 500, 1.2);
-            color: $primary-blue;
+            @include font($poppins, 500, 1.2,$color:$primary-blue);
           }
 
           input:focus {
@@ -293,7 +286,6 @@
     box-shadow: 1px 1px 10px lightgray;
     background-color: $pure-white;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px lightgray;
     z-index: 100;
 
     .modal-head {
@@ -353,12 +345,9 @@
             height: 6vh;
 
             padding-left: 1vw;
-            font-size: 16px;
-            font-weight: 600;
             border: 1px solid $primary-blue;
             position: relative;
-            @include font($poppins, 500, 1.2);
-            color: $primary-blue;
+            @include font($poppins, 500, 1.2,$color:$primary-blue);
           }
 
           input:focus {
@@ -431,7 +420,6 @@
     box-shadow: 1px 1px 10px lightgray;
     background-color: $pure-white;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px lightgray;
     z-index: 100;
 
     .modal-head {
@@ -491,12 +479,9 @@
             height: 6vh;
 
             padding-left: 1vw;
-            font-size: 16px;
-            font-weight: 600;
             border: 1px solid $primary-blue;
             position: relative;
-            @include font($poppins, 500, 1.2);
-            color: $primary-blue;
+            @include font($poppins, 500, 1.2,$color:$primary-blue);
           }
 
           input:focus {

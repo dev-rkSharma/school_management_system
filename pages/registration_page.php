@@ -9,7 +9,7 @@
 </head>
 
 <body id='student-registration-form-page'>
-	<div class="form-container">
+	<div class="form-box">
 		<div class="registration-form-heading">
 			<h1>Student Registration form</h1>
 		</div>
