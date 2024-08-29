@@ -9,7 +9,7 @@
 </head>
 
 <body id='student-registration-form-page'>
-	<div class="form-box">
+	<div class="form-container">
 		<div class="registration-form-heading">
 			<h1>Student Registration form</h1>
 		</div>
@@ -85,6 +85,7 @@
 				</section>
 				<span id="mail" class="error">
 					<p>
+
 						email is required
 					</p>
 				</span>
@@ -257,8 +258,8 @@
 		</form>
 	</div> 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="../scripts/registration_form_validation.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+	<script src="../scripts/registration_form_validation.js" ></script>
 </body>
 
 </html>
