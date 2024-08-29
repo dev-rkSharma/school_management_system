@@ -390,12 +390,11 @@ $(document).ready(function () {
           });
         } else {
 
-          console.log('message :  ', response.message);
+          console.debug('message :  ', response.message);
         }
       },
       error: function(xhr, status, error) {
-        console.log('AJAX Error: ', status, error);
-        console.log('Response: ', xhr.responseText);
+        console.table('Response: ', xhr.responseText);
       }
     });
 

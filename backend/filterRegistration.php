@@ -61,7 +61,6 @@ else if(isset($data['country_id']) && isset($data['state_id'])) {
 }
 
 
-mysqli_close($conn);
 
 echo json_encode($output);
 
