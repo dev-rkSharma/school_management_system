@@ -178,13 +178,10 @@
 				<section class="">
 					
 					<select name="country" id="country">
-						<option value="" disabled selected>-- Select Country --</option>
 					</select>
 					<select name="state" id="state">
-						<option value="" disabled selected>-- Select State --</option>
 					</select>
 					<select name="city" id="city">
-						<option value="" disabled selected>-- Select City --</option>
 					</select>
 				</section>
 				<span id="regionError" class="error">

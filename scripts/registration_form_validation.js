@@ -19,7 +19,7 @@ $(document).ready(function () {
   function clearError(selector) {
     $(selector).text("").css({
       display: "none",
-      outline: ""
+      outline: "",
     });
   }
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     if (name === "") {
       error("#nameError", "Name is required");
-      
+
       return false;
     } else if (!alpha.test(name)) {
       error("#nameError", "Enter correct name");
@@ -74,11 +74,11 @@ $(document).ready(function () {
     const mobile1 = $("#mobile1").val();
     if (mobile1 === "") {
       error("#mobile", "Mobile number is required");
-      $("#mobile1").css('outline','1px solid red');
+      $("#mobile1").css("outline", "1px solid red");
       return false;
     } else if (!phone.test(mobile1)) {
       error("#mobile", "Enter correct mobile number");
-      $("#mobile1").css('outline','1px solid red');
+      $("#mobile1").css("outline", "1px solid red");
       return false;
     } else {
       clearError("#mobile");
@@ -91,7 +91,7 @@ $(document).ready(function () {
     const mobile2 = $("#mobile2").val();
     if (mobile2 == "" || !phone.test(mobile2)) {
       error("#mobile", "Enter correct mobile number");
-      $("#mobile2").css('outline','1px solid red');
+      $("#mobile2").css("outline", "1px solid red");
       return false;
     } else {
       clearError("#mobile");
@@ -131,11 +131,11 @@ $(document).ready(function () {
   function validateClass() {
     const class_name = $("#class").val();
 
-    if (class_name == '11th' || class_name == '12th') {
+    if (class_name == "11th" || class_name == "12th") {
       $("#course-section").css("display", "block");
     } else {
       $("#course-section").css("display", "none");
-    } 
+    }
     if (class_name === "") {
       error("#classError", "Select your class");
       return false;
@@ -154,7 +154,7 @@ $(document).ready(function () {
   function isValidDate(dateString) {
     const date = new Date(dateString);
     return !isNaN(date.getTime());
-}
+  }
   //check if the selected date is in the future or not
   function isFutureDate(dateString) {
     const today = new Date();
@@ -315,14 +315,13 @@ $(document).ready(function () {
   $("#submit-btn").on("click", function (e) {
     let firstInvalidField = null;
     function checkValidity(validateFuction, selector) {
-      if(!validateFuction()) {
+      if (!validateFuction()) {
         $(selector).css("outline", "1px solid red");
 
-        if(!firstInvalidField) {
+        if (!firstInvalidField) {
           firstInvalidField = $(selector);
         }
-      }
-      else{
+      } else {
         $(selector).css("outline", "none");
       }
     }
@@ -331,7 +330,7 @@ $(document).ready(function () {
     checkValidity(validateFatherName, "#father-name");
     checkValidity(validateMotherName, "#mother-name");
     checkValidity(validateMobile1, "#mobile1");
-    checkValidity(validateMobile2, "#mobile2");
+    // checkValidity(validateMobile2, "#mobile2");
     checkValidity(validateEmail, "#email");
     checkValidity(validateGender, "input[name='gender']");
     checkValidity(validateClass, "#class");
@@ -339,67 +338,213 @@ $(document).ready(function () {
     checkValidity(validateAddress, "#address");
     checkValidity(validatePincode, "#pincode");
     checkValidity(validateRegion, "#country");
-    checkValidity(validateCourse, "#course");
+    // checkValidity(validateCourse, "#course");
     checkValidity(validatePassword, "#password");
     checkValidity(validateConfirmPasword, "#confirm-password");
 
     // if there is an invalid field, prevent form submission and set focus
     if (firstInvalidField) {
       e.preventDefault();
-
+      
       firstInvalidField.focus();
-    }
-  
-    
-  });
+    }else{
+        e.preventDefault();
+      let studentName = data('#name');
+      let fatherName = data('#father-name');
+      let motherName = data('#mother-name');
+      let mobile1 = data('#mobile1'); 
+      let mobile2 = data('#mobile2');
+      let email = data('#email');
+      let gender = $("input[name='gender']:checked").val();
+      let classSelected = data('#class');
+      let dob = data('#dob');
+      let address = data('#address');
+      let pincode = data('#pincode');
+      let city = data('#city');
+      let course = data('#course');
+      console.info(studentName);
+      console.info(fatherName);
+      console.info(motherName);
+      console.info(mobile1);
+      console.info(mobile2);
+      console.info(email);
+        console.info(gender);
+      console.info(classSelected);
+      console.info(dob);
+      console.info(address);
+      console.info(pincode);
+      console.info(city);
+      console.info(course);
+      $.ajax({
+        url: '../backend/formsubmit.php',
+        type: 'post',
+        contentType: 'application/json',
+        data : JSON.stringify({
+          name: studentName,
+          father_name: fatherName,
+          mother_name: motherName,
+          mobile1: mobile1,
+          mobile2: mobile2,
+          email: email,
+          gender: gender,
+          class: classSelected,
+          dob: dob,
+          address: address,
+          pincode: pincode,
+          city: city,
+          course: course,
+        }),
+        dataType: 'json',
+        
+        success: function (response) {
+          console.log('data',data);
+          console.log('success response : ',response);
+          if(response.status === true) {
+            alert("Form submitted successfully!");
+            clearError();
+            clearForm();
+            console.log(response.message);
+            console.log(response.data);
+          }
+          else if(response.status === 'collapsed'){
+            alert('email already registered');
+          }
+          else{
+            console.log(response.message);
+            console.log(response.data);
+          }
+        },
+        error : function (xhr, status, error) {
+          // console.error('error',error);
+          // console.error("extra",response);
+          console.error("response",xhr.responseText);
+          console.error("status",status);
+          alert("Failed to submit form. Please try again later.");
+        }
 
+      })
+    }
+
+  });
+  
+  // value = 'hello';
+  //form data submit
+  function data(id) {
+    return $(id).val().trim();
+  }
 
   //class load
-     
-  $.ajax({
-    url: '../backend/fetchClasses.php',
-    type: 'post',
-    dataType: 'json', // Corrected 'datatype' to 'dataType'
-    success: function(response) {
-        if (response.status === 1) {
-            console.log(response);
-            $('#class').empty().append('<option value="" disabled selected>-- Select Class --</option>');
-            response.data.forEach((className) => {
-                $('#class').append(`<option value='${className}'>${className}</option>`);
-            });
-        } else {
-            console.log('Error: ', response.message);
-        }
-    },
-    error: function(xhr, status, error) {
-        console.log(xhr.responseText);
-    }
-});
 
-// load country
+  $.ajax({
+    url: "../backend/fetchClasses.php",
+    type: "post",
+    dataType: "json",
+    success: function (response) {
+      if (response.status === 1) {
+        $("#class")
+          .empty()
+          .append(
+            '<option value="" disabled selected>-- Select Class --</option>'
+          );
+        response.data.forEach((className) => {
+          $("#class").append(
+            `<option value='${className}'>${className}</option>`
+          );
+        });
+      } else {
+        console.log("Error: ", response.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.log(xhr.responseText);
+    },
+  });
+
+  // load country
+  $.ajax({
+    url: "../backend/filterRegistration.php",
+    type: "POST",
+
+    dataType: "json",
+    success: function (response) {
+      if (response.status === 1) {
+        $("#country")
+          .empty()
+          .append(
+            '<option value="" disabled selected>-- Select Country --</option>'
+          );
+        $.each(response.data, function (index, Country) {
+          $("#country").append(
+            `<option value="${Country.country_id}">${Country.country_name}</option>`
+          );
+        });
+      } else {
+        console.debug("message :  ", response.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.table("Response: ", xhr.responseText);
+    },
+  });
+
+  // load state
+  $("#country").on("change", function () {
+    const country = $('#country').val();
     $.ajax({
-      url: '../backend/filterRegistration.php',
-      type: 'POST',
-      
-      dataType: 'json',
-      success: function(response) {
+      url: "../backend/filterRegistration.php",
+      type: "POST",
+      data:JSON.stringify({ country_id: country }),
+      dataType: "json",
+      success: function (response) {
         if (response.status === 1) {
-          $('#country').empty().append('<option value="" disabled selected>-- Select Class --</option>');
-          $.each(response.data, function(country_id,country_name) {
-            $('#country').append(`<option value="${country_id}">${country_name}</option>`);
+          $("#state")
+            .empty()
+            .append(
+              '<option value="" disabled selected>-- Select State --</option>'
+            );
+          $.each(response.data, function (index,state) {
+            $("#state").append(
+              `<option value="${state.state_id}">${state.state_name}</option>`
+            );
           });
         } else {
-
-          console.debug('message :  ', response.message);
+          console.debug("message :  ", response.message);
+          console.debug("status : ", response.status);
         }
       },
-      error: function(xhr, status, error) {
-        console.table('Response: ', xhr.responseText);
-      }
+      error: function (xhr, status, error) {
+        console.table("Response: ", xhr.responseText);
+      },
     });
+  });
 
-
-  
+  //load cities
+  $("#state").on("change", function (e) {
+    var state = $('#state').val();
+    $.ajax({
+      url: "../backend/filterRegistration.php",
+      type: "POST",
+      data: JSON.stringify({ state_id: state }),
+      dataType: "json",
+      success: function (response) {
+        if (response.status === 1) {
+          $("#city").empty();
+          $("#city").append(
+            '<option value="" disabled selected>-- Select City --</option>'
+          );
+          $.each(response.data, function (index, city) {
+            $("#city").append(
+              `<option value="${city.city_id}">${city.city_name}</option>`
+            );
+          });
+        } else {
+          console.debug("message : ", response.message);
+          console.debug("status : ", response.status);
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("error: " ,xhr.responseText);
+      },
+    });
+  });
 });
-
-

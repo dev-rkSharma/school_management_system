@@ -13,7 +13,6 @@
         $output['message'] = 'success';
         while($row = mysqli_fetch_assoc($result)) {
             $output['data'][] = $row['class_name'];
-            // echo `<option value="${row['class_name']}">${row['class_name']}</option>`;
         }
     }
     else{
@@ -24,5 +23,4 @@
     mysqli_close($conn);
     echo json_encode($output);
 
-    echo 'hello';
 ?>

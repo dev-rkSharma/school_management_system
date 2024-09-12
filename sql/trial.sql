@@ -56,3 +56,4 @@ INSERT INTO class_master ( class_name ) VALUES(
 );
 
 SELECT * FROM class_master;
+desc student_details; 

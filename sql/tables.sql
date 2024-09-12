@@ -54,3 +54,20 @@ CREATE TABLE IF NOT EXISTS section_master(
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     removed enum ('Y', 'N') DEFAULT 'N'
 );
+
+CREATE TABLE IF NOT EXISTS student_details(
+    student_id int AUTO_INCREMENT PRIMARY KEY,
+    stuent_name VARCHAR(255) NOT NULL,
+    father_name VARCHAR(255) NOT NULL,
+    mother_name VARCHAR(255) NOT NULL,
+    date_of_birth date not null,
+    gender enum ('Male', 'Female') NOT NULL,
+    address text,
+    mobile1 varchar(12) NOT NULL,    
+    mobile2 varchar(12) not null,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    class_id int ,
+    FOREIGN KEY (class_id) references class_master(class_id),
+    section_id int
+);
+
